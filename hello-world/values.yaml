@@ -37,13 +37,16 @@ securityContext: {}
   # runAsUser: 1000
 
 service:
-  type: ClusterIP
+  type: NodePort
+  #type: ClusterIP
   port: 80
   nodePort: 30475
   #externalPort: 80
   #internalPort: 8080
   targetPort: 9376
-
+  #type: NodePort
+  #externalPort: 80
+  #internalPort: 8080
 
 ingress:
   enabled: false
