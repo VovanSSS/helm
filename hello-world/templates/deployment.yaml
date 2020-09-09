@@ -20,6 +20,11 @@ spec:
       labels:
         {{- include "hello-world.selectorLabels" . | nindent 8 }}
     spec:
+      strategy:
+        rollingUpdate:
+          maxSurge: 1
+          maxUnavailable: 1
+        type: RollingUpdate
       {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
         {{- toYaml . | nindent 8 }}
