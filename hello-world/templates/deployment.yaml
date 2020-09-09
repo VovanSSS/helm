@@ -9,10 +9,9 @@ spec:
   replicas: {{ .Values.replicaCount }}
 {{- end }}
   strategy:
-    type: RollingUpdate
     rollingUpdate:
-      maxSurge: 1
-      maxUnavailable: 0
+      maxUnavailable: {{  add .Values.autoscaling.minReplicas  -1 }}
+    type: RollingUpdate
   selector:
     matchLabels:
       {{- include "hello-world.selectorLabels" . | nindent 6 }}
