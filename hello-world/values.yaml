@@ -4,6 +4,12 @@
 
 replicaCount: 2
 
+strategy:
+  rollingUpdate:
+    maxSurge: 1
+    maxUnavailable: 1
+  type: RollingUpdate
+
 image:
   repository: nginx
   pullPolicy: IfNotPresent
