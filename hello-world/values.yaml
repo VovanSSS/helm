@@ -39,7 +39,7 @@ securityContext: {}
 service:
   type: NodePort
   #type: ClusterIP
-  port: 80
+  port: 8080
   nodePort: 30475
   #externalPort: 80
   #internalPort: 8080
